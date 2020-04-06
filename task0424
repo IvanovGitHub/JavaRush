@@ -1,0 +1,30 @@
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        Number n1 = new Number();
+        n1.addNumber();
+        Number n2 = new Number();
+        n2.addNumber();
+        Number n3 = new Number();
+        n3.addNumber();
+
+        if ((n1.value == n2.value) && (n3.value != n1.value))
+            System.out.println(n3.count);
+        if ((n1.value == n3.value) && (n2.value != n1.value))
+            System.out.println(n2.count);
+        if ((n2.value == n3.value) && (n1.value != n2.value))
+            System.out.println(n1.count);
+    }
+
+    public static class Number {
+        public int value;
+        public static int n = 0;
+        public int count;
+
+        public void addNumber() throws IOException {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            this.value = Integer.parseInt(reader.readLine());
+            n = ++n;
+            this.count = n;
+        }
+    }
+}
